@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="my_incbook.mapper.bookMapper">
+
+	<select id="bookInfo" resultType="BookVO">
+		select 
+		*
+		from book
+		where writer = #{writer}
+	</select>
+	
+	<insert id="createbookInfo">
+		insert into book (title, genre, writer, publisher, final_update_member_id)
+		values
+		(#{title}, #{genre}, #{writer}, #{publisher}, #{finalUpdateMemberId})
+	</insert>
+
+
+</mapper>
